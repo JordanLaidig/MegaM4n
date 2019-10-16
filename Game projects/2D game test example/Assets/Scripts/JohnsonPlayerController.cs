@@ -7,6 +7,9 @@ public class JohnsonPlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
+    bool grounded = true;
+    public int health;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +24,36 @@ public class JohnsonPlayerController : MonoBehaviour
     {
         if (Input.GetKey("h"))
         {
-            rb.velocity = new Vector2(2, rb.velocity.y);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            rb.velocity = new Vector2(6, rb.velocity.y);
         }
         else if (Input.GetKey("f"))
         {
-            rb.velocity = new Vector2(-2, rb.velocity.y);
+            transform.eulerAngles = new Vector3(0, -180, 0);
+            rb.velocity = new Vector2(-6, rb.velocity.y);
         }
 
-        if (Input.GetKey("t"))
+        if (Input.GetKey("t") && grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 5);
+            rb.velocity = new Vector2(rb.velocity.x, 20);
+            grounded = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = true;
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

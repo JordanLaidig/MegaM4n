@@ -20,14 +20,14 @@ public class Fire : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
 
-        Tirtul turtle = collision.GetComponent<Tirtul>();
-        if (turtle != null)
+        DragonBossController dragonBoss = collision.GetComponent<DragonBossController>();
+        if (dragonBoss != null)
         {
-            turtle.TakeDamage(damage);
+            dragonBoss.TakeDamage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

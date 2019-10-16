@@ -66,6 +66,9 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CarsonPlayerController.cs" />
     <Compile Include="Assets\Scripts\CarsonWeapon.cs" />
+    <Compile Include="Assets\Scripts\DragonBossController.cs" />
+    <Compile Include="Assets\Scripts\DragonBossFire.cs" />
+    <Compile Include="Assets\Scripts\DragonBossWeapon.cs" />
     <Compile Include="Assets\Scripts\Fire.cs" />
     <Compile Include="Assets\Scripts\JoePlayerController.cs" />
     <Compile Include="Assets\Scripts\JoesWeapon.cs" />

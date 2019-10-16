@@ -38,7 +38,7 @@ public class JorgePlayerController : MonoBehaviour
 
         if(Input.GetKey("w") && grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 15);
+            rb.velocity = new Vector2(rb.velocity.x, 20);
             grounded = false;
         }
     }

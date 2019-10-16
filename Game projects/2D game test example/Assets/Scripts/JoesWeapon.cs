@@ -10,7 +10,7 @@ public class JoesWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("right shift"))
+        if (Input.GetKeyDown("/"))
         {
             Shoot();
         }
