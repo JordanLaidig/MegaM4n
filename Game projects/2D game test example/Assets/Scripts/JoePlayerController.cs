@@ -7,8 +7,11 @@ public class JoePlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-    bool grounded = true;
+
+    BoxCollider2D boxCollider2d;
     public int health;
+
+    bool grounded = true;
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +35,12 @@ public class JoePlayerController : MonoBehaviour
             rb.velocity = new Vector2(-6, rb.velocity.y);
         }
 
+
+
+
         if (Input.GetKey("up") && grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 20);
+            rb.velocity = new Vector2(rb.velocity.x, 15);
             grounded = false;
         }
     }

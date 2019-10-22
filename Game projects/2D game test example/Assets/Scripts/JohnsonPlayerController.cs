@@ -7,9 +7,11 @@ public class JohnsonPlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-    bool grounded = true;
+
+    BoxCollider2D boxCollider2d;
     public int health;
 
+    bool grounded = true;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,7 @@ public class JohnsonPlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
 
         if (health <= 0)
         {

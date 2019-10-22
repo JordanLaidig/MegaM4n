@@ -64,8 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\cameraDeath.cs" />
     <Compile Include="Assets\Scripts\CarsonPlayerController.cs" />
     <Compile Include="Assets\Scripts\CarsonWeapon.cs" />
+    <Compile Include="Assets\Scripts\collision.cs" />
+    <Compile Include="Assets\Scripts\collisionLeft.cs" />
+    <Compile Include="Assets\Scripts\collisionTop.cs" />
     <Compile Include="Assets\Scripts\DragonBossController.cs" />
     <Compile Include="Assets\Scripts\DragonBossFire.cs" />
     <Compile Include="Assets\Scripts\DragonBossWeapon.cs" />

@@ -7,8 +7,11 @@ public class CarsonPlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-    bool grounded = true;
+
+    BoxCollider2D boxCollider2d;
     public int health;
+
+    bool grounded = true;
 
 
     // Start is called before the first frame update
@@ -16,6 +19,7 @@ public class CarsonPlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -32,9 +36,13 @@ public class CarsonPlayerController : MonoBehaviour
             rb.velocity = new Vector2(-6, rb.velocity.y);
         }
 
+
+
+
+
         if (Input.GetKey("i") && grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 20);
+            rb.velocity = new Vector2(rb.velocity.x, 15);
             grounded = false;
         }
     }
