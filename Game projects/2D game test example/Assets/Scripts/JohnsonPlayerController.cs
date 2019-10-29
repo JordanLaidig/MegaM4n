@@ -9,7 +9,7 @@ public class JohnsonPlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     BoxCollider2D boxCollider2d;
-    public int health;
+    Health health;
 
     bool grounded = true;
 
@@ -18,7 +18,7 @@ public class JohnsonPlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -46,17 +46,6 @@ public class JohnsonPlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 }

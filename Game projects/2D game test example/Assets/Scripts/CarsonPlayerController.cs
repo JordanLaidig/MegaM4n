@@ -9,8 +9,8 @@ public class CarsonPlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     BoxCollider2D boxCollider2d;
-    public int health;
-
+    Health health;
+   
     bool grounded = true;
 
 
@@ -19,6 +19,7 @@ public class CarsonPlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        health = GetComponent<Health>();
 
     }
 
@@ -37,9 +38,6 @@ public class CarsonPlayerController : MonoBehaviour
         }
 
 
-
-
-
         if (Input.GetKey("i") && grounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, 15);
@@ -51,16 +49,6 @@ public class CarsonPlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 }
