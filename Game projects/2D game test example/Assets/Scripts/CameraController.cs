@@ -10,8 +10,17 @@ public class CameraController : MonoBehaviour
     public bool movable = true;
     private Vector3 velocity;
     
+    //Parallax stuff
+    public Vector3 tempVector;
+    public delegate void ParallaxEvent(Vector3 vector);
+    public static event ParallaxEvent ParallaxUpdate;
+    
     // Start is called before the first frame update
-
+    void Start()
+    {
+        
+    
+    }
     // Update is called once per frame
     void LateUpdate()
     {
@@ -27,10 +36,13 @@ public class CameraController : MonoBehaviour
     void Move()
     {
         Vector3 centerPoint = GetCenterPoint();
-
+        if(ParallaxUpdate != null)                                                                     //Check if there are subscribers to event
+            ParallaxUpdate(centerPoint);//Call event and pass x value of new position 
         Vector3 newPosition = centerPoint + offset;
-
+        
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+                                                                
+
     }
 
     Vector3 GetCenterPoint()
