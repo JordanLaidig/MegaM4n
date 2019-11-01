@@ -9,7 +9,7 @@ public class JoePlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     BoxCollider2D boxCollider2d;
-    public int health;
+    Health health;
 
     bool grounded = true;
 
@@ -18,6 +18,7 @@ public class JoePlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        health = GetComponent<Health>();
 
     }
 
@@ -49,16 +50,6 @@ public class JoePlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 }

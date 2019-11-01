@@ -16,31 +16,10 @@ public class DragonBossFire : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        JorgePlayerController player = collision.GetComponent<JorgePlayerController>();
+        Health player = collision.GetComponent<Health>();
         if (player != null)
         {
             player.TakeDamage(damage);
-            Destroy(gameObject);
-
-        }
-        CarsonPlayerController player2 = collision.GetComponent<CarsonPlayerController>();
-        if (player2 != null)
-        {
-            player2.TakeDamage(damage);
-            Destroy(gameObject);
-
-        }
-        JoePlayerController player3 = collision.GetComponent<JoePlayerController>();
-        if (player3 != null)
-        {
-            player3.TakeDamage(damage);
-            Destroy(gameObject);
-
-        }
-        JohnsonPlayerController player4 = collision.GetComponent<JohnsonPlayerController>();
-        if (player4 != null)
-        {
-            player4.TakeDamage(damage);
             Destroy(gameObject);
 
         }

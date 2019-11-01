@@ -8,7 +8,7 @@ public class JorgePlayerController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2d;
-    public int health;
+    Health health;
 
     bool grounded = true;
 
@@ -17,6 +17,7 @@ public class JorgePlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        health = GetComponent<Health>();
 
     }
 
@@ -47,16 +48,6 @@ public class JorgePlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 }
