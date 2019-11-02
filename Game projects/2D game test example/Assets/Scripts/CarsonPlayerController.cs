@@ -7,11 +7,12 @@ public class CarsonPlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-
     BoxCollider2D boxCollider2d;
     Health health;
+    Transform direction;
    
     bool grounded = true;
+    bool onWall = false;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class CarsonPlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<Health>();
+        direction = GetComponent<Transform>();
 
     }
 
@@ -40,8 +42,18 @@ public class CarsonPlayerController : MonoBehaviour
 
         if (Input.GetKey("i") && grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 15);
+            rb.velocity = new Vector2(rb.velocity.x, 20);
             grounded = false;
+        }
+        else if (Input.GetKey("i") && onWall && direction.rotation.y == 0)
+        {
+            rb.velocity = new Vector2(-6, 20);
+            onWall = false;
+        }
+        else if (Input.GetKey("i") && onWall && direction.rotation.y != 0)
+        {
+            rb.velocity = new Vector2(6, 20);
+            onWall = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -49,6 +61,13 @@ public class CarsonPlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
+            onWall = false;
+        }
+        else if (collision.gameObject.CompareTag("Wall"))
+        {
+            onWall = true;
+            grounded = false;
+
         }
     }
 }

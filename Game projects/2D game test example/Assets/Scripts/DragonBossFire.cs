@@ -17,9 +17,19 @@ public class DragonBossFire : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Health player = collision.GetComponent<Health>();
+
         if (player != null)
         {
             player.TakeDamage(damage);
+            Destroy(gameObject);
+
+        }
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Wall"))
+        {
             Destroy(gameObject);
 
         }

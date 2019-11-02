@@ -29,5 +29,15 @@ public class Fire : MonoBehaviour
             dragonBoss.TakeDamage(damage);
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+
+        }
+        
     }
 }

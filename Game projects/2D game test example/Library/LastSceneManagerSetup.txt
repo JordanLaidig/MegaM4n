@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ParallaxTest.unity
+- path: Assets/Scenes/Anthony's secne.unity
   isLoaded: 1
   isActive: 1

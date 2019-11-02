@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1761697102064480509}
   - component: {fileID: 1761697102064480508}
   - component: {fileID: 1761697102064480505}
+  - component: {fileID: 899014289382644627}
   m_Layer: 0
   m_Name: Joe
   m_TagString: Untagged
@@ -143,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583b245760bfc174e84196fcd1109397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
 --- !u!114 &1761697102064480505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +158,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JoesFirePoint: {fileID: 1761697102796065892}
   firePreFab: {fileID: 527703706, guid: 9f91950b06c6bc544a691eb39a26df03, type: 3}
+--- !u!114 &899014289382644627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761697102064480483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4735651068e4464f8f0837ee56943c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  health: 0
 --- !u!1 &1761697102796065899
 GameObject:
   m_ObjectHideFlags: 0

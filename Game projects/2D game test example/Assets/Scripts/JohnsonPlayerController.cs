@@ -7,11 +7,12 @@ public class JohnsonPlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-
     BoxCollider2D boxCollider2d;
     Health health;
+    Transform direction;
 
     bool grounded = true;
+    bool onWall = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,8 @@ public class JohnsonPlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<Health>();
+        direction = GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
@@ -40,12 +43,29 @@ public class JohnsonPlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 20);
             grounded = false;
         }
+        else if (Input.GetKey("t") && onWall && direction.rotation.y == 0)
+        {
+            rb.velocity = new Vector2(-6, 20);
+            onWall = false;
+        }
+        else if (Input.GetKey("t") && onWall && direction.rotation.y != 0)
+        {
+            rb.velocity = new Vector2(6, 20);
+            onWall = false;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
+            onWall = false;
+        }
+        else if (collision.gameObject.CompareTag("Wall"))
+        {
+            onWall = true;
+            grounded = false;
+
         }
     }
 }
