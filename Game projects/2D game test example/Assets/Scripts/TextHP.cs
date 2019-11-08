@@ -6,16 +6,17 @@ using UnityEngine.UI;
 public class TextHP : MonoBehaviour
 {
     public static int JorgeTextHP = 100;
-    Text JorgeTextH;
+    Text JorgeText;
+    GameManager game;
     // Start is called before the first frame update
     void Start()
     {
-        JorgeTextH = GetComponent<Text>();
+        JorgeText = GetComponent<Text>();
     }
    
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        JorgeTextH.text = GameManager.JorgeHP.ToString();
+        JorgeText.text = game.JorgeHP.ToString();
     }
 }

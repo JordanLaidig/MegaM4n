@@ -16,7 +16,7 @@ public class TurtleFire : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        JorgePlayerController player = collision.GetComponent<JorgePlayerController>();
+        Health player = collision.GetComponent<Health>();
         if (player != null)
         {
             player.TakeDamage(damage);

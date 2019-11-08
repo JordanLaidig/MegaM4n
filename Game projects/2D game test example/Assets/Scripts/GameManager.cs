@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    public static int JorgeHP;
-    public static Text JorgeText;
-    public HealthBar healthBar;
+    public int JorgeHP = 100;
+    public int JohnsonHP;
+    public int JoeHP;
+    public int CarsonHP;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }

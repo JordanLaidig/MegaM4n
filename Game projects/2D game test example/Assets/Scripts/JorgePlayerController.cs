@@ -8,7 +8,8 @@ public class JorgePlayerController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2d;
-    public int health;
+    JorgeBar bar;
+    Health health;
 
     bool grounded = true;
 
@@ -17,7 +18,7 @@ public class JorgePlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -41,22 +42,13 @@ public class JorgePlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 20);
             grounded = false;
         }
+        bar.game.JorgeHP = health.getHealth();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 }
