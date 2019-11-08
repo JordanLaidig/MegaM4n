@@ -10,8 +10,10 @@ public class JorgePlayerController : MonoBehaviour
     BoxCollider2D boxCollider2d;
     JorgeBar bar;
     Health health;
+    Transform direction;
 
     bool grounded = true;
+    bool onWall = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,10 @@ public class JorgePlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<Health>();
+<<<<<<< HEAD
+=======
+        direction = GetComponent<Transform>();
+>>>>>>> 34159bfb7e8550a57d1abc14f128447244932515
     }
 
     // Update is called once per frame
@@ -41,6 +47,17 @@ public class JorgePlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 20);
             grounded = false;
+            onWall = false;
+        }
+        else if(Input.GetKey("w") && onWall && direction.rotation.y == 0)
+        {
+            rb.velocity = new Vector2(-6, 20);
+            onWall = false;
+        }
+        else if(Input.GetKey("w") && onWall && direction.rotation.y != 0)
+        {
+            rb.velocity = new Vector2(6, 20);
+            onWall = false;
         }
         bar.game.JorgeHP = health.getHealth();
     }
@@ -49,6 +66,13 @@ public class JorgePlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
+            onWall = false;
+        }
+        else if(collision.gameObject.CompareTag("Wall"))
+        {
+            onWall = true;
+            grounded = false;
+
         }
     }
 }

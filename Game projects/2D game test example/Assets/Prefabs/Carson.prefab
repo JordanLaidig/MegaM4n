@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 865083302478056017}
   - component: {fileID: 865083302478056016}
   - component: {fileID: 865083302478056019}
+  - component: {fileID: 5299738995006121619}
   m_Layer: 0
   m_Name: Carson
   m_TagString: Untagged
@@ -173,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e908dc277555a408492d789e3200dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
 --- !u!114 &865083302478056019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +188,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CarsonsFirePoint: {fileID: 865083302141940228}
   firePreFab: {fileID: 527703706, guid: 9f91950b06c6bc544a691eb39a26df03, type: 3}
+--- !u!114 &5299738995006121619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865083302478056029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4735651068e4464f8f0837ee56943c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  health: 0

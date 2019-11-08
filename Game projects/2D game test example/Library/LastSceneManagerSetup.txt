@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/JonathanGalon Scene.unity
+=======
+- path: Assets/Scenes/Level 1 main.unity
+>>>>>>> 34159bfb7e8550a57d1abc14f128447244932515
   isLoaded: 1
   isActive: 1
   isSubScene: 0
