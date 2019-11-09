@@ -8,6 +8,7 @@ public class JorgePlayerController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2d;
+    JorgeBar bar;
     Health health;
     Transform direction;
 
@@ -20,7 +21,10 @@ public class JorgePlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<Health>();
+<<<<<<< HEAD
+=======
         direction = GetComponent<Transform>();
+>>>>>>> 34159bfb7e8550a57d1abc14f128447244932515
     }
 
     // Update is called once per frame
@@ -57,6 +61,7 @@ public class JorgePlayerController : MonoBehaviour
             rb.velocity = new Vector2(6, 20);
             onWall = false;
         }
+        bar.game.JorgeHP = health.getHealth();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

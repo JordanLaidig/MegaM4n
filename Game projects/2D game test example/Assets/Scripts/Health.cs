@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public CameraController cam;
-    public int health;
+    public static int health;
     private int maxHealth = 100;
 
     private void Start()
@@ -16,6 +16,10 @@ public class Health : MonoBehaviour
     public int getMaxHealth()
     {
         return maxHealth;
+    }
+    public int getHealth()
+    {
+        return health;
     }
     public void TakeDamage(int damage)
     {
