@@ -84,7 +84,11 @@ The following packages were updated:
   com.unity.package-manager-ui from version 2.0.7 to 2.0.8
 >>>>>>> 34159bfb7e8550a57d1abc14f128447244932515
 
+<<<<<<< HEAD
 === Fri Nov  8 16:51:58 2019
+=======
+=== Fri Nov  8 17:26:25 2019
+>>>>>>> 5b609211c3420cd51a33a216efb8d7c70426a087
 
 Packages were changed.
 Update Mode: updateDependencies
@@ -98,5 +102,10 @@ The following packages were added:
 The following packages were updated:
   com.unity.analytics from version 3.2.2 to 3.3.2
   com.unity.collab-proxy from version 1.2.15 to 1.2.16
+<<<<<<< HEAD
+=======
+  com.unity.ide.vscode from version 1.1.0 to 1.1.2
+  com.unity.package-manager-ui from version 2.0.8 to 2.2.0
+>>>>>>> 5b609211c3420cd51a33a216efb8d7c70426a087
   com.unity.purchasing from version 2.0.3 to 2.0.6
   com.unity.textmeshpro from version 1.4.1 to 2.0.1

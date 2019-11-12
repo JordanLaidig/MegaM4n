@@ -47,11 +47,13 @@ public class CarsonPlayerController : MonoBehaviour
         }
         else if (Input.GetKey("i") && onWall && direction.rotation.y == 0)
         {
+            transform.eulerAngles = new Vector3(0, -180, 0);
             rb.velocity = new Vector2(-6, 20);
             onWall = false;
         }
         else if (Input.GetKey("i") && onWall && direction.rotation.y != 0)
         {
+            transform.eulerAngles = new Vector3(0, 0, 0);
             rb.velocity = new Vector2(6, 20);
             onWall = false;
         }
