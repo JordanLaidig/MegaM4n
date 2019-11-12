@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     public int JorgeHP = 100;
-    public int JohnsonHP;
-    public int JoeHP;
-    public int CarsonHP;
+    public int JohnsonHP = 100;
+    public int JoeHP = 100;
+    public int CarsonHP = 100;
     
     // Start is called before the first frame update
     void Start()

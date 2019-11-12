@@ -21,15 +21,13 @@ public class JorgePlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<Health>();
-<<<<<<< HEAD
-=======
         direction = GetComponent<Transform>();
->>>>>>> 34159bfb7e8550a57d1abc14f128447244932515
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        bar.game.JorgeHP = health.getHealth();
         if (Input.GetKey("d"))
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -59,7 +57,7 @@ public class JorgePlayerController : MonoBehaviour
             rb.velocity = new Vector2(6, 20);
             onWall = false;
         }
-        bar.game.JorgeHP = health.getHealth();
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
